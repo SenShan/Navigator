@@ -1,0 +1,49 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+buildscript {
+    ext {
+        buildToolsVersion = "28.0.3"
+        minSdkVersion = 23
+        compileSdkVersion = 28
+        targetSdkVersion = 28
+        //下面添加新导航器
+        RNNKotlinVersion = "1.3.61" // Or any version above 1.3.x
+        RNNKotlinStdlib = "kotlin-stdlib-jdk8"
+        //新导航器结束
+    }
+    repositories {
+        google()
+        jcenter()
+        //下面添加新导航器
+        mavenLocal()
+        mavenCentral()
+        //新导航器结束
+    }
+    dependencies {
+        classpath("com.android.tools.build:gradle:3.4.2")
+        //下面添加新导航器
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.3.61"
+        //新导航器结束
+    }
+}
+
+allprojects {
+    repositories {
+        //下面添加新导航器
+        google()
+        //新导航器结束
+        mavenLocal()
+        maven {
+            // All of React Native (JS, Obj-C sources, Android binaries) is installed from npm
+            url("$rootDir/../node_modules/react-native/android")
+        }
+        maven {
+            // Android JSC is installed from npm
+            url("$rootDir/../node_modules/jsc-android/dist")
+        }
+
+        google()
+        jcenter()
+        maven { url 'https://jitpack.io' }
+    }
+}
