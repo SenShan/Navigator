@@ -1,10 +1,10 @@
 import React, {Component} from 'react';
 import {View, Text} from 'react-native';
-export default class CustomerScreen extends Component {
+export default class Much extends Component {
   render() {
     return (
       <View>
-        <Text>客户管理</Text>
+        <Text>更多2</Text>
       </View>
     );
   }
