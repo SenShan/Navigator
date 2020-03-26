@@ -18,7 +18,6 @@ Navigation.registerComponent(muchTag, () => Much);
 Navigation.registerComponent(shopTag, () => Shop);
 Navigation.registerComponent(mineTag, () => Mine);
 
-
 Navigation.setRoot({
   root: {
     bottomTabs: {
@@ -40,7 +39,7 @@ Navigation.setRoot({
                 text: '首页',
                 icon: require('./image/home_gray.png'),
                 selectedIcon: require('./image/home.png'),
-                testID: 'FIRST_TAB_BAR_BUTTON',
+                testID: 'tab_Home',
               },
             },
           },
@@ -56,7 +55,7 @@ Navigation.setRoot({
                 text: '更多',
                 icon: require('./image/manager_gray.png'),
                 selectedIcon: require('./image/manager.png'),
-                testID: 'SECOND_TAB_BAR_BUTTON',
+                testID: 'tab_Much',
               },
             },
           },
@@ -72,7 +71,7 @@ Navigation.setRoot({
                 text: '购物车',
                 icon: require('./image/car_gray.png'),
                 selectedIcon: require('./image/car.png'),
-                testID: 'SECOND_TAB_BAR_BUTTON2',
+                testID: 'tab_Car',
               },
             },
           },
@@ -88,7 +87,7 @@ Navigation.setRoot({
                 text: '我的',
                 icon: require('./image/mine_gray.png'),
                 selectedIcon: require('./image/mine.png'),
-                testID: 'SECOND_TAB_BAR_BUTTON2',
+                testID: 'tab_Mine',
               },
             },
           },
