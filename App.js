@@ -18,17 +18,82 @@ Navigation.registerComponent(muchTag, () => Much);
 Navigation.registerComponent(shopTag, () => Shop);
 Navigation.registerComponent(mineTag, () => Mine);
 
-Navigation.events().registerAppLaunchedListener(() => {
-  Navigation.setRoot({
-    root: {
-      stack: {
-        children: [
-          {component: {name: mainTag}},
-          {component: {name: muchTag}},
-          {component: {name: shopTag}},
-          {component: {name: mineTag}},
-        ],
-      },
+
+Navigation.setRoot({
+  root: {
+    bottomTabs: {
+      children: [
+        {
+          stack: {
+            children: [
+              {
+                component: {
+                  name: mainTag,
+                  passProps: {
+                    text: 'This is tab 1',
+                  },
+                },
+              },
+            ],
+            options: {
+              bottomTab: {
+                text: '首页',
+                icon: require('./image/home_gray.png'),
+                selectedIcon: require('./image/home.png'),
+                testID: 'FIRST_TAB_BAR_BUTTON',
+              },
+            },
+          },
+        },
+        {
+          component: {
+            name: muchTag,
+            passProps: {
+              text: 'This is tab 2',
+            },
+            options: {
+              bottomTab: {
+                text: '更多',
+                icon: require('./image/manager_gray.png'),
+                selectedIcon: require('./image/manager.png'),
+                testID: 'SECOND_TAB_BAR_BUTTON',
+              },
+            },
+          },
+        },
+        {
+          component: {
+            name: shopTag,
+            passProps: {
+              text: 'This is tab 3',
+            },
+            options: {
+              bottomTab: {
+                text: '购物车',
+                icon: require('./image/car_gray.png'),
+                selectedIcon: require('./image/car.png'),
+                testID: 'SECOND_TAB_BAR_BUTTON2',
+              },
+            },
+          },
+        },
+        {
+          component: {
+            name: mineTag,
+            passProps: {
+              text: 'This is tab 3',
+            },
+            options: {
+              bottomTab: {
+                text: '我的',
+                icon: require('./image/mine_gray.png'),
+                selectedIcon: require('./image/mine.png'),
+                testID: 'SECOND_TAB_BAR_BUTTON2',
+              },
+            },
+          },
+        },
+      ],
     },
-  });
+  },
 });
